@@ -1,0 +1,17 @@
+/* purgecss start ignore */
+
+@tailwind base;
+@tailwind components;
+
+/* purgecss end ignore */
+
+@tailwind utilities;
+
+
+body {
+  font-family: Samim;
+  font-size: 16px;
+}
+p {
+  margin: 1rem 0;
+}
