@@ -8,7 +8,7 @@ var siteMetadata = {
   description: description,
   siteUrl: siteUrl,
   author: author,
-  googleAnalyticsID: 'UA-140678064-2',
+  googleAnalyticsID: 'UA-53881969-2',
   social: {
     linkedin: 'kadkhodaei',
     facebook: 'arash.kadkhodaei',
