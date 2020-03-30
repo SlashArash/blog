@@ -16,9 +16,6 @@ type Props = {
 const TagsPage: React.FC<Props> = ({
   data: {
     allMarkdownRemark: { group },
-    site: {
-      siteMetadata: { title },
-    },
   },
 }) => (
   <Layout>
