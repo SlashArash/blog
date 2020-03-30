@@ -1,14 +1,27 @@
+var title = 'وبلاگ آرش کدخدائی';
+var description = 'وبلاگ شخصی آرش کدخدائی یک فانی‌لنسر';
+var siteUrl = 'https://kadkhodaei.ir/';
+var author = 'آرش کدخدائی';
+
 var siteMetadata = {
-  title: 'وبلاگ آرش کدخدائی',
-  description: 'وبلاگ شخصی آرش کدخدائی یک فانی‌لنسر',
-  siteUrl: 'https://kadkhodaei.ir/',
-  author: 'آرش کدخدائی',
+  title: title,
+  description: description,
+  siteUrl: siteUrl,
+  author: author,
   googleAnalyticsID: 'UA-140678064-2',
   social: {
     linkedin: 'kadkhodaei',
     facebook: 'arash.kadkhodaei',
     nickname: `slasharash`,
   },
+  rssMetadata: {
+    site_url: siteUrl,
+    feed_url: siteUrl + 'rss.xml',
+    title: title,
+    description: description,
+    image_url: `${siteUrl}src/assets/images/SlashArash.webp`,
+    author: author,
+  }
 }
 
 module.exports = {
@@ -80,9 +93,9 @@ module.exports = {
         short_name: siteMetadata.siteTitle,
         start_url: '/',
         background_color: '#ffffff',
-        theme_color: '#34c8b6',
+        theme_color: '#e3b95f',
         display: 'standalone',
-        icon: `src/assets/images/SlashArash.svg`,
+        icon: `src/assets/images/SlashArash.webp`,
       },
     },
     {
