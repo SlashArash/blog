@@ -8,6 +8,7 @@ backend:
     uploadMedia: '[skip ci] Upload “{{path}}”'
     deleteMedia: '[skip ci] Delete “{{path}}”'
 
+publish_mode: editorial_workflow
 media_folder: static/img
 public_folder: /img
 
@@ -28,11 +29,11 @@ collections:
 
   - name: "pages"
     label: "Pages"
-    folder: "src/pages/single-page"
+    folder: "src/pages"
     create: true
     slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "single-page"}
-      - {label: "Path", name: "path", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
