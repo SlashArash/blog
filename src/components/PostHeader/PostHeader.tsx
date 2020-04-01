@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { Link } from 'gatsby'
 
 import { PersianDate } from 'utils/date'
+import Heading from 'components/Heading'
 
 type Props = {
   date?: string
@@ -12,11 +13,8 @@ type Props = {
 
 const PostHeader: React.FC<Props> = ({ slug, title, date, tags }) => (
   <header>
-    <Link
-      className="text-gold-400 hover:text-gold-600 text-3xl font-bold transition duration-300 ease-in-out"
-      to={slug}
-    >
-      <h1 className="">{title}</h1>
+    <Link to={slug} className="inline-block">
+      <Heading>{title}</Heading>
     </Link>
     <p className="my-4">
       {date && <span>{PersianDate(date)} - </span>}
@@ -24,6 +22,7 @@ const PostHeader: React.FC<Props> = ({ slug, title, date, tags }) => (
         <Fragment>
           {tags.map((tag) => (
             <Link
+              key={tag}
               to={`/tags/${tag}`}
               className="text-gold-400 transition duration-300 ease-in-out mx-1 px-1 border border-solid rounded-lg hover:text-gold-600 hover:border-gold-600"
             >

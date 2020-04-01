@@ -6,6 +6,7 @@ import Tag from 'types/Tag'
 import { kebabCase } from 'utils/string'
 import Layout from 'components/Layout'
 import Seo from 'components/Seo'
+import Heading from 'components/Heading'
 
 type Props = {
   data: {
@@ -19,28 +20,23 @@ const TagsPage: React.FC<Props> = ({
   },
 }) => (
   <Layout>
-    <section className="section">
-      <Seo slug="/tags" title={messages.tags} />
-      <div className="container content">
-        <div className="columns">
-          <div
-            className="column is-10 is-offset-1"
-            style={{ marginBottom: '6rem' }}
+    <Seo slug="/tags" title={messages.tags} />
+    <Heading>{messages.tags}</Heading>
+    <ul className="flex flex-wrap">
+      {group.map((tag) => (
+        <li key={tag.fieldValue} className="my-4 w-full sm:w-1/2">
+          <Link
+            to={`/tags/${kebabCase(tag.fieldValue)}/`}
+            className="transition duration-300 ease-in-out hover:text-gray-600"
           >
-            <h1 className="title is-size-2 is-bold-light">Tags</h1>
-            <ul className="taglist">
-              {group.map((tag) => (
-                <li key={tag.fieldValue}>
-                  <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                    {tag.fieldValue} ({tag.totalCount})
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+            <span className="rounded-lg bg-gold-400 text-white px-2 py-1 w-10 inline-block text-center ml-4">
+              {tag.totalCount}
+            </span>
+            <span className="font-bold">{tag.fieldValue}</span>
+          </Link>
+        </li>
+      ))}
+    </ul>
   </Layout>
 )
 

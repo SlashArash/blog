@@ -12,7 +12,7 @@ type Props = {
 const BlogRoll: React.FC<Props> = ({ articles }) => (
   <Fragment>
     {articles.map(({ node: post }) => (
-      <div className="mb-6">
+      <div className="mb-6" key={post.fields.slug}>
         <PostHeader
           date={post.frontmatter.date}
           slug={post.fields.slug}
