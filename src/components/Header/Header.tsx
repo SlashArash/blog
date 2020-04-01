@@ -14,7 +14,11 @@ const Header: React.FC = () => (
       <Link className="mx-4" to="/آرش">
         {messages.arash}
       </Link>
-      <span className="text-gold">/</span>
+      <span className="text-gold-400">/</span>
+      <Link className="mx-4" to="/tags">
+        {messages.tags}
+      </Link>
+      <span className="text-gold-400">/</span>
       <Link className="mr-4" to="/rss.xml">
         {messages.feed}
       </Link>
