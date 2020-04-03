@@ -1,9 +1,9 @@
-var title = 'وبلاگ آرش کدخدائی';
-var description = 'وبلاگ شخصی آرش کدخدائی یک فانی‌لنسر';
-var siteUrl = 'https://kadkhodaei.ir/';
-var author = 'آرش کدخدائی';
+const title = 'وبلاگ آرش کدخدائی'
+const description = 'وبلاگ شخصی آرش کدخدائی یک فانی‌لنسر'
+const siteUrl = 'https://kadkhodaei.ir/'
+const author = 'آرش کدخدائی'
 
-var siteMetadata = {
+const siteMetadata = {
   title: title,
   description: description,
   siteUrl: siteUrl,
@@ -21,7 +21,7 @@ var siteMetadata = {
     description: description,
     image_url: `${siteUrl}src/assets/images/SlashArash.webp`,
     author: author,
-  }
+  },
 }
 
 module.exports = {
@@ -183,7 +183,7 @@ module.exports = {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         tailwind: true,
-        purgeOnly: [`src/style/tailwind.css`],
+        purgeOnly: [`src/styles/tailwinds.css`],
       },
     },
     {
