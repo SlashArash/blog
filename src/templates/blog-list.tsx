@@ -5,6 +5,7 @@ import { ArticleForBlog } from 'types/Article'
 import Layout from 'components/Layout'
 import BlogRoll from 'components/BlogRoll'
 import Seo from 'components/Seo'
+import Pagination from 'components/Pagination'
 
 type Props = {
   data: {
@@ -12,22 +13,34 @@ type Props = {
       edges: ArticleForBlog[]
     }
   }
+  pageContext: {
+    limit: number
+    skip: number
+    numPages: number
+    currentPage: number
+  }
 }
 
-const BlogPage: React.FC<Props> = ({ data }) => (
+const BlogPage: React.FC<Props> = ({ data, pageContext }) => (
   <Layout>
     <Seo slug={'/'} title="" />
     <BlogRoll articles={data.allMarkdownRemark.edges} />
+    <Pagination
+      currentPage={pageContext.currentPage}
+      numPages={pageContext.numPages}
+    />
   </Layout>
 )
 
 export default BlogPage
 
 export const blogQueryPage = graphql`
-  query BlogQuery {
+  query BlogQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+      limit: $limit
+      skip: $skip
     ) {
       edges {
         node {
