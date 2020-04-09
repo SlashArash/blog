@@ -1,7 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import HyvorTalk from 'hyvor-talk-react'
 
-import { ArticleForPost } from 'Article'
+import { ArticleForPost } from 'types/Article'
 import Layout from 'components/Layout'
 import PostHeader from 'components/PostHeader'
 import Seo from 'components/Seo'
@@ -31,6 +32,7 @@ const BlogPost: React.FC<Props> = ({ data: { markdownRemark: post } }) => {
         className="my-6"
         dangerouslySetInnerHTML={{ __html: post.html }}
       />
+      <HyvorTalk.Embed websiteId={419} loadMode="scroll" />
     </Layout>
   )
 }
