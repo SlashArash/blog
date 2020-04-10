@@ -27,7 +27,7 @@ collections:
       - {label: "Keywords", name: "keywords", widget: "list"}
       - {label: "Description", name: "description", widget: "text"}
 
-  - name: "pages"
+  - name: "page"
     label: "Pages"
     folder: "src/pages"
     create: true
