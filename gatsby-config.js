@@ -179,13 +179,6 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        tailwind: true,
-        purgeOnly: [`src/styles/tailwinds.css`],
-      },
-    },
     'gatsby-plugin-netlify-cms',
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
