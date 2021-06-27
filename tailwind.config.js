@@ -519,7 +519,9 @@ module.exports = {
     flexWrap: ['responsive'],
     float: ['responsive'],
     clear: ['responsive'],
-    fontFamily: ['responsive'],
+    fontFamily: {
+      sans: ['Samim', 'sans-serif']
+    },
     fontSize: ['responsive'],
     fontSmoothing: ['responsive'],
     fontStyle: ['responsive'],
