@@ -1,18 +1,19 @@
-import type { ReactNode } from "react";
-import { Vazirmatn } from "next/font/google";
+import type { ReactNode } from 'react'
+import { Vazirmatn } from 'next/font/google'
 
-import "./global.css";
-import { Header } from "../components/header";
-import { Footer } from "../components/footer";
-import { ThemeProvider } from "../components/theme-provider";
-import { siteConfig } from "../config/site";
-import { Metadata } from "next";
+import './global.css'
+import { Header } from '../components/header'
+import { Footer } from '../components/footer'
+import { ThemeProvider } from '../components/theme-provider'
+import { siteConfig } from '../config/site'
+import { Metadata } from 'next'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const vazir = Vazirmatn({
-  subsets: ["arabic", "latin"],
-  display: "swap",
-  variable: "--font-vazir", // Define the CSS variable
-});
+  subsets: ['arabic', 'latin'],
+  display: 'swap',
+  variable: '--font-vazir', // Define the CSS variable
+})
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -28,9 +29,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           {children}
           <Footer />
         </ThemeProvider>
+        <GoogleAnalytics gaId="G-DRHQ5G3W3V" />
       </body>
     </html>
-  );
+  )
 }
 
 export const metadata: Metadata = {
@@ -41,14 +43,14 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
   alternates: {
-    canonical: "./",
+    canonical: './',
     types: {
-      "application/rss+xml": `${siteConfig.url}/feed.xml`,
+      'application/rss+xml': `${siteConfig.url}/feed.xml`,
     },
   },
   openGraph: {
-    type: "website",
-    locale: "fa_IR",
+    type: 'website',
+    locale: 'fa_IR',
     url: siteConfig.url,
     title: siteConfig.name,
     description: siteConfig.description,
@@ -58,4 +60,4 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-};
+}
