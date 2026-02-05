@@ -1,17 +1,13 @@
 import { config, collection, fields, singleton } from '@keystatic/core'
 
 export const markdocConfig = fields.markdoc.createMarkdocConfig({})
-const isProd = process.env.NODE_ENV === 'production'
+
+export const showAdminUI = process.env.NODE_ENV === 'development'
 
 export default config({
-  storage: isProd
-    ? {
-        kind: 'github',
-        repo: { owner: 'SlashArash', name: 'blog' },
-      }
-    : {
-        kind: 'local',
-      },
+  storage: {
+    kind: 'local',
+  },
   collections: {
     posts: collection({
       label: 'Posts',
@@ -60,6 +56,10 @@ export default config({
             blockquote: true,
             orderedList: true,
             unorderedList: true,
+            image: {
+              directory: 'public/images/posts',
+              publicPath: '/images/posts',
+            },
           },
         }),
       },
