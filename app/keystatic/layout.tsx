@@ -1,11 +1,11 @@
-import { notFound } from "next/navigation";
+import { notFound } from 'next/navigation'
 
-import KeystaticApp from "./keystatic";
-import { showAdminUI } from "../../keystatic.config";
+import KeystaticApp from './keystatic'
+import { showAdminUI } from '../../keystatic.config'
 
 export default function RootLayout() {
   if (showAdminUI === false) {
-    notFound();
+    notFound()
   }
-  return <KeystaticApp />;
+  return <KeystaticApp />
 }
