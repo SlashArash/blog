@@ -1,4 +1,0 @@
-[build]
-  publish = "public"
-  command = "bun run build"
-  functions = "lambda"
