@@ -1,9 +1,36 @@
-# Project dependencies
-# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
-node_modules
-.cache/
-# Build directory
-public/
-static/admin/*.bundle.*
-.DS_Store
-yarn-error.log
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+.DS_STORE
+
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+supabase/.temp/
+
+
+public/sw.js
+public/workbox-*.js
+public/fallback-*.js

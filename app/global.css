@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* This maps Tailwind's 'font-sans' utility to your Vazir variable */
+  --font-sans: var(--font-vazir), ui-sans-serif, system-ui, sans-serif;
+
+  --font-serif: var(--font-vazir);
+
+  --color-primary: #305cde;
+}
+
+/* Ensure punctuation and direction look right for Persian */
+:root {
+  font-feature-settings: "ss01", "ss02"; /* Optional: Vazir stylistic sets */
+}
+
+.prose {
+  text-align: justify;
+  line-height: 1.8;
+}
+
+.persian-numbers {
+  font-feature-settings: "pnum" on;
+}

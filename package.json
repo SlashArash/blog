@@ -1,69 +1,38 @@
 {
-  "name": "kadkhodaei-blog",
-  "description": "A simple blog for kadkhodaei.ir",
-  "version": "1.0.0",
-  "author": "Arash Kadkhodaei",
+  "name": "@keystatic/templates-nextjs",
+  "version": "0.0.62",
   "license": "MIT",
-  "main": "n/a",
-  "private": true,
-  "remarkConfig": {
-    "plugins": [
-      "remark-preset-lint-recommended"
-    ]
-  },
-  "scripts": {
-    "clean": "gatsby clean",
-    "start": "yarn run develop",
-    "build": "yarn run clean && gatsby build",
-    "develop": "yarn run clean && gatsby develop",
-    "serve": "gatsby serve",
-    "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
-    "lint:fix": "eslint --ext js,jsx,ts,tsx --ignore-path .gitignore . --fix"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Thinkmill/keystatic/",
+    "directory": "templates/nextjs"
   },
   "dependencies": {
-    "gatsby": "^3.8.0",
-    "gatsby-image": "^3.8.0",
-    "gatsby-plugin-feed": "^3.8.0",
-    "gatsby-plugin-google-analytics": "^3.8.0",
-    "gatsby-plugin-manifest": "^3.8.0",
-    "gatsby-plugin-netlify": "^3.8.0",
-    "gatsby-plugin-netlify-cms": "^5.8.0",
-    "gatsby-plugin-offline": "^4.8.0",
-    "gatsby-plugin-react-helmet": "^4.8.0",
-    "gatsby-plugin-resolve-src": "^2.1.0",
-    "gatsby-plugin-sharp": "^3.8.0",
-    "gatsby-plugin-sitemap": "^4.4.0",
-    "gatsby-plugin-tailwindcss": "^1.0.3",
-    "gatsby-plugin-typescript": "^3.8.0",
-    "gatsby-plugin-web-font-loader": "^1.0.4",
-    "gatsby-remark-copy-linked-files": "^4.5.0",
-    "gatsby-remark-images": "^5.5.0",
-    "gatsby-remark-relative-images": "^2.0.2",
-    "gatsby-source-filesystem": "^3.8.0",
-    "gatsby-transformer-remark": "^4.5.0",
-    "gatsby-transformer-sharp": "^3.8.0",
-    "hyvor-talk-react": "^1.0.3",
-    "netlify-cms-app": "^2.15.20",
-    "netlify-cms-media-library-cloudinary": "^1.3.10",
-    "netlify-cms-media-library-uploadcare": "^0.5.10",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0"
+    "@keystatic/core": "^0.5.48",
+    "@keystatic/next": "^5.0.4",
+    "@markdoc/markdoc": "^0.4.0",
+    "lucide-react": "^0.563.0",
+    "motion": "^12.31.0",
+    "next": "^15.1.6",
+    "next-themes": "^0.4.6",
+    "postcss": "^8.5.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "rss": "^1.2.2",
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
-    "@types/node": "^15.12.5",
-    "@types/react": "^17.0.11",
-    "@types/react-dom": "^17.0.8",
-    "@types/react-helmet": "^6.1.1",
-    "@typescript-eslint/eslint-plugin": "^4.28.0",
-    "@typescript-eslint/parser": "^4.28.0",
-    "eslint": "^7.29.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "gatsby-plugin-postcss": "^4.8.0",
-    "lodash": "^4.17.21",
-    "prettier": "^2.3.2",
-    "tailwindcss": "^2.2.4",
-    "typescript": "^4.3.4"
+    "@tailwindcss/postcss": "^4.1.18",
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/node": "25.2.0",
+    "@types/react": "^19.0.8",
+    "@types/rss": "^0.0.32",
+    "typescript": "^5.5.3"
+  },
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start"
   }
 }
