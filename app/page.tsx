@@ -7,23 +7,11 @@ import { SocialLinks } from '../components/social-links'
 import { siteConfig } from '../config/site'
 import { getPlainText } from '../lib/utils'
 
-interface Props {
-  searchParams: Promise<{ page?: string }>
-}
-
-export default async function Homepage({ searchParams }: Props) {
-  const params = await searchParams
-  const postsPerPage = 5
-  const currentPage = Number(params.page) || 1
+export default async function Homepage() {
+  const postsToShow = 5
 
   // 1. Fetch all posts
   const allPosts = await reader.collections.posts.all()
-
-  console.log(`DEBUG: Total posts found ->, ${allPosts.length}`)
-
-  if (allPosts.length === 0) {
-    console.log('DEBUG: No posts found. Path being searched ->', process.cwd())
-  }
 
   // 2. Sort by Date (Newest First)
   const sortedPosts = allPosts.sort((a, b) => {
@@ -32,14 +20,10 @@ export default async function Homepage({ searchParams }: Props) {
     return dateB - dateA // Descending order
   })
 
-  const startIndex = (currentPage - 1) * postsPerPage
-  const endIndex = startIndex + postsPerPage
-  const currentPosts = sortedPosts.slice(startIndex, endIndex)
-
-  console.log(`DEBUG: current posts ->, ${currentPosts.length}`)
+  const latestPosts = sortedPosts.slice(0, postsToShow)
 
   const postsWithExcerpts = await Promise.all(
-    currentPosts.map(async (post) => {
+    latestPosts.map(async (post) => {
       const { node } = await post.entry.content()
       const plainText = getPlainText(node)
 
@@ -50,8 +34,6 @@ export default async function Homepage({ searchParams }: Props) {
       return { ...post, excerpt }
     })
   )
-
-  console.log(`DEBUG: posts with excerpt ->, ${postsWithExcerpts.length}`)
 
   return (
     <main className="max-w-2xl mx-auto py-12 px-4 flex flex-col gap-4">
