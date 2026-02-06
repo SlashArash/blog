@@ -1,49 +1,57 @@
-import { Metadata } from "next";
+import { Metadata } from 'next'
 
-import { reader } from "./reader";
-import PostList from "../components/post-list";
-import ButtonLink from "../components/button-link";
-import { SocialLinks } from "../components/social-links";
-import { siteConfig } from "../config/site";
-import { getPlainText } from "../lib/utils";
+import { reader } from './reader'
+import PostList from '../components/post-list'
+import ButtonLink from '../components/button-link'
+import { SocialLinks } from '../components/social-links'
+import { siteConfig } from '../config/site'
+import { getPlainText } from '../lib/utils'
 
 interface Props {
-  searchParams: Promise<{ page?: string }>;
+  searchParams: Promise<{ page?: string }>
 }
 
 export default async function Homepage({ searchParams }: Props) {
-  const params = await searchParams;
-  const postsPerPage = 5;
-  const currentPage = Number(params.page) || 1;
+  const params = await searchParams
+  const postsPerPage = 5
+  const currentPage = Number(params.page) || 1
 
   // 1. Fetch all posts
-  const allPosts = await reader.collections.posts.all();
+  const allPosts = await reader.collections.posts.all()
+
+  console.log(`DEBUG: Total posts found ->, ${allPosts.length}`)
+
+  if (allPosts.length === 0) {
+    console.log('DEBUG: No posts found. Path being searched ->', process.cwd())
+  }
 
   // 2. Sort by Date (Newest First)
   const sortedPosts = allPosts.sort((a, b) => {
-    const dateA = new Date(a.entry.date || "").getTime();
-    const dateB = new Date(b.entry.date || "").getTime();
-    return dateB - dateA; // Descending order
-  });
+    const dateA = new Date(a.entry.date || '').getTime()
+    const dateB = new Date(b.entry.date || '').getTime()
+    return dateB - dateA // Descending order
+  })
 
-  const startIndex = (currentPage - 1) * postsPerPage;
-  const endIndex = startIndex + postsPerPage;
-  const currentPosts = sortedPosts.slice(startIndex, endIndex);
+  const startIndex = (currentPage - 1) * postsPerPage
+  const endIndex = startIndex + postsPerPage
+  const currentPosts = sortedPosts.slice(startIndex, endIndex)
+
+  console.log(`DEBUG: current posts ->, ${currentPosts.length}`)
 
   const postsWithExcerpts = await Promise.all(
     currentPosts.map(async (post) => {
-      const { node } = await post.entry.content();
-      const plainText = getPlainText(node);
+      const { node } = await post.entry.content()
+      const plainText = getPlainText(node)
 
       // Slice the first 350 characters
       const excerpt =
-        plainText.length > 350
-          ? plainText.substring(0, 350) + "..."
-          : plainText;
+        plainText.length > 350 ? plainText.substring(0, 350) + '...' : plainText
 
-      return { ...post, excerpt };
-    }),
-  );
+      return { ...post, excerpt }
+    })
+  )
+
+  console.log(`DEBUG: posts with excerpt ->, ${postsWithExcerpts.length}`)
 
   return (
     <main className="max-w-2xl mx-auto py-12 px-4 flex flex-col gap-4">
@@ -64,9 +72,9 @@ export default async function Homepage({ searchParams }: Props) {
         <ButtonLink href="/blog/archive">همه‌ی نوشته‌ها</ButtonLink>
       </div>
     </main>
-  );
+  )
 }
 
 export const metadata: Metadata = {
   title: siteConfig.name,
-};
+}
