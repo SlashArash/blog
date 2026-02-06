@@ -36,7 +36,7 @@ export default async function Homepage() {
   )
 
   return (
-    <main className="max-w-2xl mx-auto py-12 px-4 flex flex-col gap-4">
+    <>
       <section className="flex flex-col justify-center items-center gap-6 my-12">
         <div className="text-balance">
           <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl flex items-baseline justify-center font-medium gap-3 dark:text-white text-base-900">
@@ -53,7 +53,7 @@ export default async function Homepage() {
       <div className="text-center mt-6">
         <ButtonLink href="/blog/archive">همه‌ی نوشته‌ها</ButtonLink>
       </div>
-    </main>
+    </>
   )
 }
 

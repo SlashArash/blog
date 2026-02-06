@@ -25,9 +25,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     >
       <body className="font-sans antialiased bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200">
         <ThemeProvider>
-          <Header />
-          {children}
-          <Footer />
+          <main className="max-w-2xl mx-auto px-4 flex flex-col gap-5">
+            <Header />
+            {children}
+            <Footer />
+          </main>
         </ThemeProvider>
         <GoogleAnalytics gaId="G-DRHQ5G3W3V" />
       </body>
