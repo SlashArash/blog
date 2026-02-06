@@ -47,7 +47,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: './',
     types: {
-      'application/rss+xml': `${siteConfig.url}/feed.xml`,
+      'application/rss+xml': [
+        { url: '/feed.xml', title: 'بلاگ آرش کدخدائی - RSS Feed' },
+      ],
     },
   },
   openGraph: {

@@ -1,11 +1,11 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { useState } from 'react'
+import { Menu, X } from 'lucide-react'
+import { motion, AnimatePresence } from 'motion/react'
 
-import { menuItems } from "../consts/menu-items";
-import Button from "./button";
+import { menuItems } from '../consts/menu-items'
+import Button from './button'
 
 const navContainer = {
   visible: {
@@ -24,7 +24,7 @@ const navContainer = {
       duration: 0.3,
     },
   },
-};
+}
 const navList = {
   visible: {
     opacity: 1,
@@ -40,7 +40,7 @@ const navList = {
       staggerDirection: -1,
     },
   },
-};
+}
 
 const navItem = {
   visible: {
@@ -57,10 +57,10 @@ const navItem = {
       y: { stiffness: 1000, velocity: -100 },
     },
   },
-};
+}
 
 export function MobileMenu() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <div className="md:hidden">
@@ -87,7 +87,7 @@ export function MobileMenu() {
             {/* Menu Panel */}
             <motion.div
               initial="hidden"
-              animate={isOpen ? "visible" : "hidden"}
+              animate={isOpen ? 'visible' : 'hidden'}
               exit="hidden"
               variants={navContainer}
               className="fixed end-0 top-0 h-full w-[220px] bg-zinc-100 dark:bg-zinc-900 z-30 p-6 shadow-2xl"
@@ -110,6 +110,7 @@ export function MobileMenu() {
                     key={item.title}
                     href={item.url}
                     onClick={() => setIsOpen(false)}
+                    {...item.options}
                   >
                     <p>{item.title}</p>
                   </motion.a>
@@ -120,5 +121,5 @@ export function MobileMenu() {
         )}
       </AnimatePresence>
     </div>
-  );
+  )
 }

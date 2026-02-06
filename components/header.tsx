@@ -28,6 +28,7 @@ export function Header() {
               key={item.title}
               href={item.url}
               className="hover:text-primary transition-colors"
+              {...item.options}
             >
               {item.title}
             </Link>
