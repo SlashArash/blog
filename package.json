@@ -13,6 +13,7 @@
     "@keystatic/next": "^5.0.4",
     "@markdoc/markdoc": "^0.5.8",
     "@next/third-parties": "^16.2.12",
+    "clsx": "^2.1.1",
     "lucide-react": "^1.27.0",
     "motion": "^12.42.2",
     "next": "^16.2.12",
