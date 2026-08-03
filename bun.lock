@@ -5,6 +5,7 @@
     "": {
       "name": "@keystatic/templates-nextjs",
       "dependencies": {
+        "@fontsource-variable/vazirmatn": "^5.3.0",
         "@keystatic/core": "^0.6.2",
         "@keystatic/next": "^5.0.4",
         "@markdoc/markdoc": "^0.5.8",
@@ -66,6 +67,8 @@
     "@floating-ui/react-dom": ["@floating-ui/react-dom@2.1.9", "", { "dependencies": { "@floating-ui/dom": "^1.8.0" }, "peerDependencies": { "react": ">=16.8.0", "react-dom": ">=16.8.0" } }, "sha512-JDjEFGCpImxDCA7JJKviA0M9+RtmJdj0m/NVU5IMgBK+AmZouAQQ7/+2GLH0GXXY0YMw9oXPB8hKdbPYg5QLYg=="],
 
     "@floating-ui/utils": ["@floating-ui/utils@0.2.12", "", {}, "sha512-HpCo8tmWzLVad5s2d19EhAz5zqrrQ6s69qd6moPMQvkOuSwDT1YgRfWSVuc4ennqrgv3OHppiOGMQ7oC13yIww=="],
+
+    "@fontsource-variable/vazirmatn": ["@fontsource-variable/vazirmatn@5.3.0", "", {}, "sha512-ZA68W8JHbMdNzzwjYHUWKB2PH22QpxNEnk0ukcXM+XiqYMV6ZWJZAKuNXcrMR2JjuIAwsfAU3KknCXPI6wXUvw=="],
 
     "@graphql-typed-document-node/core": ["@graphql-typed-document-node/core@3.2.0", "", { "peerDependencies": { "graphql": "^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0" } }, "sha512-mB9oAsNCm9aM3/SOv4YtBMqZbYj10R7dkq8byBqxGY/ncFwhf2oQzMV+LCRlWoDSEBJ3COiR1yeDvMtsoOsuFQ=="],
 

@@ -4,10 +4,10 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* This maps Tailwind's 'font-sans' utility to your Vazir variable */
-  --font-sans: var(--font-vazir), ui-sans-serif, system-ui, sans-serif;
+  /* This maps Tailwind's 'font-sans' utility to Vazirmatn Variable */
+  --font-sans: "Vazirmatn Variable", ui-sans-serif, system-ui, sans-serif;
 
-  --font-serif: var(--font-vazir);
+  --font-serif: "Vazirmatn Variable";
 
   --color-primary: #305cde;
 }

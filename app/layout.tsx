@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import { Metadata } from 'next'
 
+import '@fontsource-variable/vazirmatn'
 import './global.css'
 import { siteConfig } from '../config/site'
 
