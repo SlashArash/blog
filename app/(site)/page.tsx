@@ -1,11 +1,11 @@
 import { Metadata } from 'next'
 
-import { reader } from './reader'
-import PostList from '../components/post-list'
-import ButtonLink from '../components/button-link'
-import { SocialLinks } from '../components/social-links'
-import { siteConfig } from '../config/site'
-import { getPlainText } from '../lib/utils'
+import { reader } from '../reader'
+import PostList from '../../components/post-list'
+import ButtonLink from '../../components/button-link'
+import { SocialLinks } from '../../components/social-links'
+import { siteConfig } from '../../config/site'
+import { getPlainText } from '../../lib/utils'
 
 export default async function Homepage() {
   const postsToShow = 5

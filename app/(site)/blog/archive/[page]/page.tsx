@@ -1,12 +1,12 @@
 import Link from "next/link";
 import React from "react";
 
-import { reader } from "../../../reader";
-import PostList from "../../../../components/post-list";
-import Pagination from "../../../../components/pagination";
+import { reader } from "../../../../reader";
+import PostList from "../../../../../components/post-list";
+import Pagination from "../../../../../components/pagination";
 import { Metadata } from "next";
-import { siteConfig } from "../../../../config/site";
-import { getPlainText } from "../../../../lib/utils";
+import { siteConfig } from "../../../../../config/site";
+import { getPlainText } from "../../../../../lib/utils";
 
 const POSTS_PER_PAGE = 15;
 

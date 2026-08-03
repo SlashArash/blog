@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { Metadata } from "next";
 
-import { reader } from "../../../reader";
-import { siteConfig } from "../../../../config/site";
-import { getPlainText } from "../../../../lib/utils";
-import PostList from "../../../../components/post-list";
+import { reader } from "../../../../reader";
+import { siteConfig } from "../../../../../config/site";
+import { getPlainText } from "../../../../../lib/utils";
+import PostList from "../../../../../components/post-list";
 
 type TagArchivePageProps = { params: Promise<{ tag: string }> };
 

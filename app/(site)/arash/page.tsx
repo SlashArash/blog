@@ -2,8 +2,8 @@ import React from "react";
 import Markdoc from "@markdoc/markdoc";
 import { Metadata } from "next";
 
-import { reader } from "../reader";
-import { markdocConfig } from "../../keystatic.config";
+import { reader } from "../../reader";
+import { markdocConfig } from "../../../keystatic.config";
 
 export default async function AboutPage() {
   const data = await reader.singletons.about.read();

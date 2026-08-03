@@ -3,9 +3,9 @@ import type { Metadata } from 'next'
 import Markdoc from '@markdoc/markdoc'
 import Link from 'next/link'
 
-import { reader } from '../../reader'
-import { markdocConfig } from '../../../keystatic.config'
-import { siteConfig } from '../../../config/site'
+import { reader } from '../../../reader'
+import { markdocConfig } from '../../../../keystatic.config'
+import { siteConfig } from '../../../../config/site'
 
 type PostPageProps = {
   params: Promise<{ slug: string }>

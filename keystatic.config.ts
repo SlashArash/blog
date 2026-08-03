@@ -5,9 +5,16 @@ export const markdocConfig = fields.markdoc.createMarkdocConfig({})
 export const showAdminUI = process.env.NODE_ENV === 'development'
 
 export default config({
-  storage: {
-    kind: 'local',
-  },
+  storage:
+    process.env.NEXT_PUBLIC_KEYSTATIC_STORAGE_KIND === 'github' ||
+    process.env.NODE_ENV === 'production'
+      ? {
+          kind: 'github',
+          repo: 'SlashArash/blog',
+        }
+      : {
+          kind: 'local',
+        },
   collections: {
     posts: collection({
       label: 'Posts',

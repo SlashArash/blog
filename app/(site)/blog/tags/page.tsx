@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Metadata } from "next";
 
-import { reader } from "../../reader";
-import { siteConfig } from "../../../config/site";
+import { reader } from "../../../reader";
+import { siteConfig } from "../../../../config/site";
 
 export default async function TagsPage() {
   const allPosts = await reader.collections.posts.all();
